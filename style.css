@@ -1,0 +1,11 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.dino {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+}
