@@ -1,13 +1,17 @@
 const dino = document.getElementsByClassName('dino');
+let isJumping = false;
 
 function handleyKeyUp(event) {
     if (event.keyCode === 32) { //32 = espaço
-        jump();
+        if (!isJumping) {
+            jump();
+        }
     }
 }
 
 function jump() {
     let position = 0;
+    isJumping = true;
 
     if (position >= 150) 
     {
@@ -17,6 +21,7 @@ function jump() {
             if (position <= 0) 
             {
                 clearInterval(downInterval());
+                isJumping = false;
             } 
             else 
             {
