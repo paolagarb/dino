@@ -23,7 +23,7 @@ function jump() {
             let downInterval = setInterval(() => {
                 if (position <= 0) 
                 {
-                    clearInterval(downInterval());
+                    clearInterval(downInterval);
                     isJumping = false;
                 } 
                 else 
@@ -57,7 +57,11 @@ function createCactus() {
             clearInterval(leftInterval);
             background.removeChild(cactus);
         }
-        else 
+        else if (cactusPosition > 0 && cactusPosition < 60 && position < 60) 
+        {
+            clearInterval(leftInterval);
+            document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+        } else
         {
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';    
